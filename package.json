@@ -13,6 +13,7 @@
     "express": "~4.6.1",
     "body-parser": "~1.4.3",
     "underscore": "~1.6.0",
-    "request": "~2.37.0"
+    "request": "~2.37.0",
+    "q": "~1.0.1"
   }
 }

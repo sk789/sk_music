@@ -19,6 +19,8 @@ app.post('/follow', function(req, res) {
     var from = req.body['from'];
     var to = req.body['to'];
 
+    console.log(from + " started following " + to);
+
     var user_from = users.getOrAddUser(from); 
     user_from.addFollower(to);
 
@@ -29,6 +31,8 @@ app.post('/listen', function(req, res) {
     var user_id = req.body['user'];
     var music_id = req.body['music'];
 
+    console.log(user_id + " listened to " + music_id);
+
     var user = users.getOrAddUser(user_id);
     user.addListened(music_id);
 
@@ -37,6 +41,8 @@ app.post('/listen', function(req, res) {
 
 app.get('/recommendations', function(req, res) {
     var user_id = req.query['user'];
+
+    console.log("get reccomendations for " + user_id);
 
     res.json({
         list: util.generateRecommendationsForUser(user_id, music, users)
